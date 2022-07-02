@@ -1,0 +1,161 @@
+$font-family: Helvetica, Arial, sans-serif;
+
+:root{
+	--azul: #21232A;
+	--blanco: #ffffff;
+}
+
+:root.light{
+	--azul: #ffffff;
+	--blanco: #21232A;
+}
+
+$azul: var(--azul);
+$blanco: var(--blanco);
+
+*{
+	box-sizing: border-box;
+}
+
+html, body{
+	background: $azul;
+	color: $blanco;
+	font: 400 1.3rem/1.6rem $font-family;
+	margin: 0;
+}
+
+.o-container{
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+	max-width: 1240px;
+	min-height: 100vh;
+	padding: 0 20px;
+	width: 100%;
+}
+
+.o-boton{
+	background: transparent;
+	border: 2px solid $blanco;
+	position: relative;
+	transition: all 0.5s ease-in;
+
+	&:hover{
+		background: $blanco;
+
+		&:disabled{
+			background: transparent;
+			
+			&:before, &:after{
+				background: $blanco;
+			}
+		}
+	}
+
+	&:disabled{
+		opacity: 0.1;
+	}
+
+	&__redondo{
+		border-radius: 50%;
+		font-size: 0;
+		height: 50px;
+		width: 50px;
+
+		&:before, &:after{
+			background: $blanco;
+			content: '';
+			display: block;
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			transition: all 0.5s ease-in;
+		}
+
+		&:before{
+			height: 2px;
+			width: 20px;
+		}
+
+		&:hover{
+			&:after, &:before{
+				background: $azul;
+			}
+		}
+
+		&--mas{
+			&:after{
+				height: 20px;
+				width: 2px;
+			}
+		}
+	}
+
+	&__rectangular{
+		border-radius: 4px;
+		color: $blanco;
+		font: 400 1.3rem/1.6rem $font-family;
+		height: 50px;
+		padding: 5px 30px;
+		position: relative;
+
+		&:before{
+			background: $blanco;
+			content: '';
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			transform: none;
+			transition: all 0.5s ease-in;
+			width: 0;
+		}
+
+		&:hover{
+			background: transparent;
+			color: $azul;
+			
+			&:before{
+				background: $blanco;
+				width: 100%;
+			}
+
+			&:disabled{
+				color: $blanco;
+				
+				&:before{
+					display: none;
+				}
+			}
+		}
+
+		span{
+			position: relative;
+		}
+	}
+}
+
+.c-contador{
+	&__titulo{
+		margin: 0 0 50px 0;
+	}
+
+	&__conteo{
+		align-items: center;
+		display: flex;
+		gap: 20px;
+		justify-content: center;
+		margin: 0 0 30px 0;
+	}
+
+	&__texto{
+		margin: 0;
+		max-width: calc(100vw - 170px);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}

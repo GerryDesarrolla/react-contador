@@ -1,0 +1,54 @@
+.c-theme{
+	--height-of-switch: 31px;
+	--size-of-icon: 25px;
+	--slider-offset: 3px;
+	--width-of-switch: 60px;
+	height: var(--height-of-switch);
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: var(--width-of-switch);
+	
+	&__input{
+		height: 0;
+		opacity: 0;
+		width: 0;
+		
+		&:checked{
+			& + .c-theme__span{
+				background-color: #303136;
+				
+				&:before{
+					background: #303136;
+					box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+					left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+				}
+			}
+		}
+	}
+	
+	&__span{
+		background-color: #f4f4f5;
+		border-radius: 30px;
+		bottom: 0;
+		cursor: pointer;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transition: .4s;
+		
+		&:before{
+			background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+			border-radius: 20px;
+			content: "";
+			height: var(--size-of-icon,1.4em);
+			left: var(--slider-offset,0.3em);
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: .4s;
+			width: var(--size-of-icon,1.4em);
+		}
+	}
+}

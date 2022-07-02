@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas sobre <CounterApp/> Hacer match con el snapshot 1`] = `
+<div>
+  <div
+    class="c-contador o-container"
+  >
+    <label
+      class="c-contador__tema"
+      for="theme"
+    >
+      <input
+        class="c-contador__checkbox"
+        id="theme"
+        type="checkbox"
+      />
+      <span />
+    </label>
+    <h1
+      class="c-contador__titulo"
+    >
+      Contador
+    </h1>
+    <div
+      class="c-contador__conteo"
+    >
+      <button
+        class="o-boton o-boton__redondo o-boton__redondo--menos"
+        disabled=""
+      >
+        -
+      </button>
+      <p
+        class="c-contador__texto"
+      >
+        0
+      </p>
+      <button
+        class="o-boton o-boton__redondo o-boton__redondo--mas"
+      >
+        +
+      </button>
+    </div>
+    <button
+      class="o-boton o-boton__rectangular"
+      disabled=""
+    >
+      <span>
+        Reiniciar
+      </span>
+    </button>
+  </div>
+</div>
+`;
