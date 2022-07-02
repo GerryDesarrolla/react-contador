@@ -2,7 +2,7 @@
 Contador simple suma o resta números
 
 ## Visita el proyecto
-https://gerrydesarrolla.github.io/react-contador/
+<a href="https://gerrydesarrolla.github.io/react-contador/" target="_blank">Contador</a>
 
 
 ### Información General
